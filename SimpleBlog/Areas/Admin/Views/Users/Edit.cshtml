@@ -4,6 +4,7 @@
 
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
     <div class="form-group">
@@ -19,6 +20,6 @@
     <input type="submit" value="Update User" class="btn btn-primary" />
     <a href="@Url.Action("index")">or cancel</a>
 
-    }
+}
 
 

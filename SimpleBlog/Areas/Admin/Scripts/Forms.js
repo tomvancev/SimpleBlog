@@ -6,12 +6,16 @@
 
         if (message && !confirm(message))
             return;
-
-        $("<form>")
+        var antiForgeryToken = $("#anti-forgery-form input");
+        var antiForgeryInput = $("<input type='hidden'>")
+                                .attr("name", antiForgeryToken.attr("name"))
+                                .val(antiForgeryToken.val());
+        $form = $("<form>")
             .attr("method", "post")
             .attr("action", $this.attr("href"))
-            .appendTo(document.body)
-            .submit();
+            .append(antiForgeryInput);
+
+        $form.appendTo(document.body).submit();
 
     })
 })
