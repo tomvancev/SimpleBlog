@@ -30,9 +30,12 @@ namespace SimpleBlog
 
             // add our mappings
             var mapper = new ModelMapper();
+
             mapper.AddMapping<UserMap>();
+            mapper.AddMapping<RoleMap>();
 
             config.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
+
 
             // create session factory
             _sessionFactory = config.BuildSessionFactory();
