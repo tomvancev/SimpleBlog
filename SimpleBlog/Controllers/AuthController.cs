@@ -36,6 +36,7 @@ namespace SimpleBlog.Controllers
 
             FormsAuthentication.SetAuthCookie(user.Username, true);
 
+
             if (!string.IsNullOrWhiteSpace(returnUrl))
             {
                 return Redirect(returnUrl);
