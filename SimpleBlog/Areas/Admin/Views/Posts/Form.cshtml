@@ -62,7 +62,7 @@
                         {
                             var tag = Model.Tags[i];
 
-                            <li data-tag-id="@tag.Id">
+                            <li data-tag-id="@tag.Id" class="@(tag.IsChecked ? "selected" : "")">
                                 <a href="#">@tag.Name</a>
 
                                 <input type="hidden" class="Tags[@(i).Id" value="@tag.Id" />
@@ -81,4 +81,6 @@
 @section Scripts
 {
     @Scripts.Render("~/admin/scripts/post/scripts")
+    <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 }
